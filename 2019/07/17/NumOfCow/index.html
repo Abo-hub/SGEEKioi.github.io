@@ -93,18 +93,18 @@
   };
 </script>
 
-  <meta name="description" content="【标签】递归和动态规划 【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。 【解答】所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间">
+  <meta name="description" content="【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。">
 <meta name="keywords" content="算法,动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="母牛生小牛">
 <meta property="og:url" content="http://yoursite.com/2019/07/17/NumOfCow/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="【标签】递归和动态规划 【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。 【解答】所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间">
+<meta property="og:description" content="【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-17T14:04:41.212Z">
+<meta property="og:updated_time" content="2019-07-17T14:06:58.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="母牛生小牛">
-<meta name="twitter:description" content="【标签】递归和动态规划 【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。 【解答】所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间">
+<meta name="twitter:description" content="【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。">
 
 
 
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="创建时间：2019-07-17 22:04:41" itemprop="dateCreated datePublished" datetime="2019-07-17T22:04:41+08:00">2019-07-17</time>
+              <time title="创建时间：2019-07-17 22:06:58" itemprop="dateCreated datePublished" datetime="2019-07-17T22:06:58+08:00">2019-07-17</time>
             </span>
           
 
@@ -471,8 +471,9 @@
       
 
       
-        <h2 id="【标签】"><a href="#【标签】" class="headerlink" title="【标签】"></a>【标签】</h2><p>递归和动态规划</p>
-<h2 id="【题目】"><a href="#【题目】" class="headerlink" title="【题目】"></a>【题目】</h2><p>假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。</p>
+        <h2 id="【题目】"><a href="#【题目】" class="headerlink" title="【题目】"></a>【题目】</h2><p>假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。</p>
+<a id="more"></a>
+
 <h2 id="【解答】"><a href="#【解答】" class="headerlink" title="【解答】"></a>【解答】</h2><p>所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间出生的牛肯定没有成熟。所以C(n) = C(n-1)+C(n-3),初始项C(1)==1,C(2)==2，C(3)==3。这个和斐波那契数列数列十分相似，只不过C(n)依赖C(n-1)和C(n-3)的值</p>
 <h3 id="方法一-O-2-N"><a href="#方法一-O-2-N" class="headerlink" title="方法一  O(2^N^)"></a>方法一  O(2^N^)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">c1</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">2</span> || n == <span class="number">3</span>)</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">return</span> c1(n - <span class="number">1</span>) + c1(n - <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
@@ -723,7 +724,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【标签】"><span class="nav-number">1.</span> <span class="nav-text">【标签】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【题目】"><span class="nav-number">2.</span> <span class="nav-text">【题目】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【解答】"><span class="nav-number">3.</span> <span class="nav-text">【解答】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-O-2-N"><span class="nav-number">3.1.</span> <span class="nav-text">方法一  O(2^N^)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-O-N"><span class="nav-number">3.2.</span> <span class="nav-text">方法  O(N)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【题目】"><span class="nav-number">1.</span> <span class="nav-text">【题目】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【解答】"><span class="nav-number">2.</span> <span class="nav-text">【解答】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-O-2-N"><span class="nav-number">2.1.</span> <span class="nav-text">方法一  O(2^N^)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-O-N"><span class="nav-number">2.2.</span> <span class="nav-text">方法  O(N)</span></a></li></ol></li></ol></div>
             
 
           </div>
