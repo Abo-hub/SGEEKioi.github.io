@@ -94,7 +94,7 @@
 </script>
 
   <meta name="description" content="类加载时机类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。 加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。 类加载的过程加载在加载阶段需要完成3件事：  通过一个类的全限定名来获取定义此类的二进制字节流。 将字节流">
-<meta name="keywords" content="JVM,Java">
+<meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM5">
 <meta property="og:url" content="http://yoursite.com/2019/07/18/JVM5/index.html">
@@ -597,9 +597,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
-          
             <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
           
         </div>
       
@@ -941,7 +941,24 @@
 
 
 
-  <script src="/js/next-boot.js?v=7.2.0"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <script src="/js/next-boot.js?v=7.2.0"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 
   
 
