@@ -93,18 +93,18 @@
   };
 </script>
 
-  <meta name="description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用–   | – |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚拟">
-<meta name="keywords" content="Java,JVM">
+  <meta name="description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用–   | – |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚">
+<meta name="keywords" content="JVM,Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM(三)虚拟机性能监控与故障处理工具">
 <meta property="og:url" content="http://yoursite.com/2019/07/18/JVM3/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用–   | – |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚拟">
+<meta property="og:description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用–   | – |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T03:23:35.231Z">
+<meta property="og:updated_time" content="2019-07-18T03:31:35.218Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM(三)虚拟机性能监控与故障处理工具">
-<meta name="twitter:description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用–   | – |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚拟">
+<meta name="twitter:description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用–   | – |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚">
 
 
 
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="创建时间：2019-07-18 11:07:38 / 修改时间：11:23:35" itemprop="dateCreated datePublished" datetime="2019-07-18T11:07:38+08:00">2019-07-18</time>
+              <time title="创建时间：2019-07-18 11:07:38 / 修改时间：11:31:35" itemprop="dateCreated datePublished" datetime="2019-07-18T11:07:38+08:00">2019-07-18</time>
             </span>
           
 
@@ -418,6 +418,21 @@
             
           
 
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -461,6 +476,7 @@
 
       
         <a id="more"></a>
+
 <h2 id="JDK命令行工具"><a href="#JDK命令行工具" class="headerlink" title="JDK命令行工具"></a>JDK命令行工具</h2><p>这些命令在JDK安装目录的bin目录下<br>名称 | 主要作用<br>–   | – |<br>jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程<br>jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据<br>jinfo | Configuration Info for Java，显示虚拟机配置信息<br>jmap | Memory Map for Java，生成虚拟机的内存转储快照<br>jhat | JVM Heap Dump Browser,用于分析heapdump文件，他会建立一个HTTP/HTML服务器，让用户可以i在浏览器查看分析结果<br>jstack | Stack Trace for Java，显示虚拟机的线程快照</p>
 <h3 id="jps-查看所有Java进程"><a href="#jps-查看所有Java进程" class="headerlink" title="jps:查看所有Java进程"></a>jps:查看所有Java进程</h3><p>可以列出正在运行的虚拟机进程，并显示虚拟机执行主类名称以及这些进程的本地虚拟机唯一ID(LVMID)</p>
 <h4 id="jps命令格式"><a href="#jps命令格式" class="headerlink" title="jps命令格式"></a>jps命令格式</h4><p>jps [options] [hostid]</p>
@@ -589,9 +605,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
-          
             <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
           
         </div>
       
