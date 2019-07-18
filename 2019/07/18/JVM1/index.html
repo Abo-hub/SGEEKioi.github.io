@@ -93,13 +93,13 @@
   };
 </script>
 
-  <meta name="description" content="一 概述对于Java程序员来说，在虚拟机自动内存管理机制的帮助下，不在需要为每一个new操作去写配对的delete/free代码，不容易出现内存泄漏和内存溢出的问题。不过正是因为将内存的控制权力交给了java虚拟机，一旦出现内存的泄露和溢出方面的问题，如果不了解虚拟机是怎么使用内存的，那么排查错误将会成为一项异常艰难的工作。 二 运行时数据区域Java虚拟机在执行Java程序的过程中会把它所管">
+  <meta name="description" content="一 概述对于Java程序员来说，在虚拟机自动内存管理机制的帮助下，不在需要为每一个new操作去写配对的delete/free代码，不容易出现内存泄漏和内存溢出的问题。不过正是因为将内存的控制权力交给了java虚拟机，一旦出现内存的泄露和溢出方面的问题，如果不了解虚拟机是怎么使用内存的，那么排查错误将会成为一项异常艰难的工作。 二 运行时数据区域Java虚拟机在执行Java程序的过程中会把它所管理">
 <meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM(一)Java内存区域与内存溢出异常">
 <meta property="og:url" content="http://yoursite.com/2019/07/18/JVM1/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="一 概述对于Java程序员来说，在虚拟机自动内存管理机制的帮助下，不在需要为每一个new操作去写配对的delete/free代码，不容易出现内存泄漏和内存溢出的问题。不过正是因为将内存的控制权力交给了java虚拟机，一旦出现内存的泄露和溢出方面的问题，如果不了解虚拟机是怎么使用内存的，那么排查错误将会成为一项异常艰难的工作。 二 运行时数据区域Java虚拟机在执行Java程序的过程中会把它所管">
+<meta property="og:description" content="一 概述对于Java程序员来说，在虚拟机自动内存管理机制的帮助下，不在需要为每一个new操作去写配对的delete/free代码，不容易出现内存泄漏和内存溢出的问题。不过正是因为将内存的控制权力交给了java虚拟机，一旦出现内存的泄露和溢出方面的问题，如果不了解虚拟机是怎么使用内存的，那么排查错误将会成为一项异常艰难的工作。 二 运行时数据区域Java虚拟机在执行Java程序的过程中会把它所管理">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://camo.githubusercontent.com/0bcc6c01a919b175827f0d5540aeec115df6c001/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d334a617661e8bf90e8a18ce697b6e695b0e68daee58cbae59f9f4a444b312e382e706e67">
 <meta property="og:image" content="https://github.com/SGEEKioi/InterView/blob/master/JVM/img/yunxing.png?raw=true">
@@ -110,7 +110,7 @@
 <meta property="og:updated_time" content="2019-07-18T03:31:28.887Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM(一)Java内存区域与内存溢出异常">
-<meta name="twitter:description" content="一 概述对于Java程序员来说，在虚拟机自动内存管理机制的帮助下，不在需要为每一个new操作去写配对的delete/free代码，不容易出现内存泄漏和内存溢出的问题。不过正是因为将内存的控制权力交给了java虚拟机，一旦出现内存的泄露和溢出方面的问题，如果不了解虚拟机是怎么使用内存的，那么排查错误将会成为一项异常艰难的工作。 二 运行时数据区域Java虚拟机在执行Java程序的过程中会把它所管">
+<meta name="twitter:description" content="一 概述对于Java程序员来说，在虚拟机自动内存管理机制的帮助下，不在需要为每一个new操作去写配对的delete/free代码，不容易出现内存泄漏和内存溢出的问题。不过正是因为将内存的控制权力交给了java虚拟机，一旦出现内存的泄露和溢出方面的问题，如果不了解虚拟机是怎么使用内存的，那么排查错误将会成为一项异常艰难的工作。 二 运行时数据区域Java虚拟机在执行Java程序的过程中会把它所管理">
 <meta name="twitter:image" content="https://camo.githubusercontent.com/0bcc6c01a919b175827f0d5540aeec115df6c001/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d334a617661e8bf90e8a18ce697b6e695b0e68daee58cbae59f9f4a444b312e382e706e67">
 
 
@@ -342,7 +342,7 @@
 
   
 
-  <a href="https://github.com/yourname" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+  <a href="https://github.com/SGEEKioi" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
 
 
 
@@ -483,7 +483,6 @@
 
       
         <a id="more"></a>
-
 <h2 id="一-概述"><a href="#一-概述" class="headerlink" title="一 概述"></a>一 概述</h2><p>对于Java程序员来说，在虚拟机自动内存管理机制的帮助下，不在需要为每一个new操作去写配对的delete/free代码，不容易出现内存泄漏和内存溢出的问题。不过正是因为将内存的控制权力交给了java虚拟机，一旦出现内存的泄露和溢出方面的问题，如果不了解虚拟机是怎么使用内存的，那么排查错误将会成为一项异常艰难的工作。</p>
 <h2 id="二-运行时数据区域"><a href="#二-运行时数据区域" class="headerlink" title="二 运行时数据区域"></a>二 运行时数据区域</h2><p>Java虚拟机在执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。</p>
 <p>JDK 1.8:<br><img src="https://camo.githubusercontent.com/0bcc6c01a919b175827f0d5540aeec115df6c001/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d334a617661e8bf90e8a18ce697b6e695b0e68daee58cbae59f9f4a444b312e382e706e67" alt="jvm内存模型"></p>
@@ -523,9 +522,7 @@
 <h3 id="2-4-Java-堆"><a href="#2-4-Java-堆" class="headerlink" title="2.4 Java 堆"></a>2.4 Java 堆</h3><p>Java堆(Java Heap)是Java虚拟机所管理的内存中最大的一块。Java堆是被所有线程共享的一块内存区域，在虚拟机启动时创建。<strong>此内存区域的唯一目的就是存放对象实例，几乎所有的对象实例都在这里分配内存。</strong></p>
 <p>Java堆时垃圾收集器管理的主要区域，因此很多时候被称为<strong>GC堆。</strong>从内存回收的角度看，由于现在收集器基本都采用<strong>分代收集算法</strong>，所以Java堆中还可以细分为：<strong>新生代和老生代</strong>；再细致一点的有：Eden空间、From Survivor空间、To Survivor空间等。<strong>进一步划分的目的是为了更好地回收内存，或者更快的分配内存</strong></p>
 <h3 id="2-5-方法区"><a href="#2-5-方法区" class="headerlink" title="2.5 方法区"></a>2.5 方法区</h3><p>共享的内存区域，用于存储已被虚拟机加载的类信息、常量、静态变量、即时编译器后的代码等数据。虽然Java虚拟机规范把方法区描述为堆的一逻辑部分，但是它有个别名<strong>Non—Heap(非堆)</strong>，目的应该时与Java堆区分开来。</p>
-<p><strong>在JDK1.8的时候，方法区被彻底移除了，取而代之是元空间，元空间使用的是之际内存。</strong><br>常用参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-XX:MetaspaceSIze=N  //设置Metaspace的初始(和最小)大小</span><br><span class="line">-XX:MaxMetaspaceSize=N  //设置Metaspace的最大大小</span><br></pre></td></tr></table></figure>
-
+<p><strong>在JDK1.8的时候，方法区被彻底移除了，取而代之是元空间，元空间使用的是之际内存。</strong><br>常用参数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">-XX:MetaspaceSIze=N  //设置Metaspace的初始(和最小)大小</span><br><span class="line">-XX:MaxMetaspaceSize=N  //设置Metaspace的最大大小</span><br></pre></td></tr></table></figure></p>
 <h4 id="2-5-1-为什么要将永久代-PerGen-替换元空间-MetaSpace-呢？"><a href="#2-5-1-为什么要将永久代-PerGen-替换元空间-MetaSpace-呢？" class="headerlink" title="2.5.1 为什么要将永久代(PerGen)替换元空间(MetaSpace)呢？"></a>2.5.1 为什么要将永久代(PerGen)替换元空间(MetaSpace)呢？</h4><p>整个永久代有一个JVM本身设置固定大小上限，无法进行调整，而元空间使用的是直接内存，受本机可用内存呢的限制，并且永远不会得到Java.lang.OutOfMemoryError。你可以使用 -XX：MaxMetaspaceSize 标志设置最大元空间大小，默认值为unlimited，这意味着它只受系统内存的限制， -XX:MetaspaceSize 调整标志定义元空间的初始大小如果未指定此标志，则Metaspace将根据运行时的应用程序需求动态地重新调整大小。</p>
 <h3 id="2-6-运行时常量"><a href="#2-6-运行时常量" class="headerlink" title="2.6 运行时常量"></a>2.6 运行时常量</h3><p>运行时常量池是方法区的一部分，Class文件中除了有类的版本、字段、方法、接口等描述信息外，还有常量池信息(用于存放编译器生成的各种字面量和符号引用)</p>
 <p>**JDK 1.7及以后版本的JVM已经将运行是常量池从方法区移了出来，在Java中开辟了一块区域存放运行时常量。<br><img src="https://github.com/SGEEKioi/InterView/blob/master/JVM/img/yunxing.png?raw=true" alt="常量池"></p>
@@ -833,7 +830,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">SUNBO</span>
 
