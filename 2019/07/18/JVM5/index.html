@@ -93,20 +93,20 @@
   };
 </script>
 
-  <meta name="description" content="类加载时机类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。 加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。 类加载的过程加载在加载阶段需要完成3件事：  通过一个类的全限定名来获取定义此类的二进制字节流。 将字节流所代">
+  <meta name="description" content="类加载时机类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。 加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。 类加载的过程加载在加载阶段需要完成3件事：  通过一个类的全限定名来获取定义此类的二进制字节流。 将字节流">
 <meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM5">
 <meta property="og:url" content="http://yoursite.com/2019/07/18/JVM5/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="类加载时机类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。 加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。 类加载的过程加载在加载阶段需要完成3件事：  通过一个类的全限定名来获取定义此类的二进制字节流。 将字节流所代">
+<meta property="og:description" content="类加载时机类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。 加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。 类加载的过程加载在加载阶段需要完成3件事：  通过一个类的全限定名来获取定义此类的二进制字节流。 将字节流">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/SGEEKioi/InterView/blob/master/JVM/img/%E7%B1%BB%E5%8A%A0%E8%BD%BD.jpg?raw=true">
 <meta property="og:image" content="https://camo.githubusercontent.com/4311721b0968c1b9fd63bdc0acf11d7358a52ff6/68747470733a2f2f6d792d626c6f672d746f2d7573652e6f73732d636e2d6265696a696e672e616c6979756e63732e636f6d2f323031392d362f636c6173736c6f616465725f5750532545352539422542452545372538392538372e706e67">
-<meta property="og:updated_time" content="2019-07-18T03:25:33.638Z">
+<meta property="og:updated_time" content="2019-07-18T03:28:48.872Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM5">
-<meta name="twitter:description" content="类加载时机类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。 加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。 类加载的过程加载在加载阶段需要完成3件事：  通过一个类的全限定名来获取定义此类的二进制字节流。 将字节流所代">
+<meta name="twitter:description" content="类加载时机类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。 加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。 类加载的过程加载在加载阶段需要完成3件事：  通过一个类的全限定名来获取定义此类的二进制字节流。 将字节流">
 <meta name="twitter:image" content="https://github.com/SGEEKioi/InterView/blob/master/JVM/img/%E7%B1%BB%E5%8A%A0%E8%BD%BD.jpg?raw=true">
 
 
@@ -259,7 +259,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">4</span></a>
 
   </li>
         
@@ -277,7 +277,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
 
   </li>
         
@@ -295,7 +295,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">6</span></a>
 
   </li>
         
@@ -411,7 +411,7 @@
                 
               
 
-              <time title="创建时间：2019-07-18 11:07:14 / 修改时间：11:25:33" itemprop="dateCreated datePublished" datetime="2019-07-18T11:07:14+08:00">2019-07-18</time>
+              <time title="创建时间：2019-07-18 11:07:14 / 修改时间：11:28:48" itemprop="dateCreated datePublished" datetime="2019-07-18T11:07:14+08:00">2019-07-18</time>
             </span>
           
 
@@ -463,7 +463,9 @@
       
 
       
-        <h2 id="类加载时机"><a href="#类加载时机" class="headerlink" title="类加载时机"></a>类加载时机</h2><p>类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。<br><img src="https://github.com/SGEEKioi/InterView/blob/master/JVM/img/%E7%B1%BB%E5%8A%A0%E8%BD%BD.jpg?raw=true" alt="leijiazai"></p>
+        <a id="more"></a>
+
+<h2 id="类加载时机"><a href="#类加载时机" class="headerlink" title="类加载时机"></a>类加载时机</h2><p>类从被加载到虚拟机内存开始，到卸载出内存为止，它的整个生命周期包括：加载、验证、准备、解析、初始化、使用和卸载7个阶段。其中验证、准备、解析3个部分统称连接。<br><img src="https://github.com/SGEEKioi/InterView/blob/master/JVM/img/%E7%B1%BB%E5%8A%A0%E8%BD%BD.jpg?raw=true" alt="leijiazai"></p>
 <p>加载、验证、准备、初始化和卸载这5个阶段的顺序是确定的，但是解析阶段不一定：它再某些情况下可以再初始化阶段之后再开始。</p>
 <h2 id="类加载的过程"><a href="#类加载的过程" class="headerlink" title="类加载的过程"></a>类加载的过程</h2><h3 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h3><p>在加载阶段需要完成3件事：</p>
 <ol>
@@ -679,7 +681,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -700,9 +702,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -727,11 +727,7 @@
         
           
         
-          
-        
-          
-        
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>

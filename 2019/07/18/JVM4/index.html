@@ -93,18 +93,18 @@
   };
 </script>
 
-  <meta name="description" content="一、概述在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。 Class文件结构总结Class文件是一组以8位字节为基础单位的二进制流。Class文件格式采用一种类似与C语言结构体的伪结构来存储数据，这种伪结构中只有两种数据类">
+  <meta name="description" content="一、概述在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。 Class文件结构总结Class文件是一组以8位字节为基础单位的二进制流。Class文件格式采用一种类似与C语言结构体的伪结构来存储数据，这种伪结构中只有两种数">
 <meta name="keywords" content="Java,JVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM(四)类文件结构">
 <meta property="og:url" content="http://yoursite.com/2019/07/18/JVM4/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="一、概述在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。 Class文件结构总结Class文件是一组以8位字节为基础单位的二进制流。Class文件格式采用一种类似与C语言结构体的伪结构来存储数据，这种伪结构中只有两种数据类">
+<meta property="og:description" content="一、概述在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。 Class文件结构总结Class文件是一组以8位字节为基础单位的二进制流。Class文件格式采用一种类似与C语言结构体的伪结构来存储数据，这种伪结构中只有两种数">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T03:24:26.190Z">
+<meta property="og:updated_time" content="2019-07-18T03:28:35.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM(四)类文件结构">
-<meta name="twitter:description" content="一、概述在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。 Class文件结构总结Class文件是一组以8位字节为基础单位的二进制流。Class文件格式采用一种类似与C语言结构体的伪结构来存储数据，这种伪结构中只有两种数据类">
+<meta name="twitter:description" content="一、概述在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。 Class文件结构总结Class文件是一组以8位字节为基础单位的二进制流。Class文件格式采用一种类似与C语言结构体的伪结构来存储数据，这种伪结构中只有两种数">
 
 
 
@@ -256,7 +256,7 @@
       
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">6</span></a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">4</span></a>
 
   </li>
         
@@ -274,7 +274,7 @@
       
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">3</span></a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">2</span></a>
 
   </li>
         
@@ -292,7 +292,7 @@
       
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">6</span></a>
 
   </li>
         
@@ -408,7 +408,7 @@
                 
               
 
-              <time title="创建时间：2019-07-18 11:07:43 / 修改时间：11:24:26" itemprop="dateCreated datePublished" datetime="2019-07-18T11:07:43+08:00">2019-07-18</time>
+              <time title="创建时间：2019-07-18 11:07:43 / 修改时间：11:28:35" itemprop="dateCreated datePublished" datetime="2019-07-18T11:07:43+08:00">2019-07-18</time>
             </span>
           
 
@@ -460,7 +460,9 @@
       
 
       
-        <h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。</p>
+        <a id="more"></a>
+
+<h2 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h2><p>在Java中，JVM可以理解的代码叫做==字节码==(及 .class文件)。Java语言通过字节码的方式，在一定程度上解决了传统解释性语言执行效率低的问题，同时又保留了解释型语言可移植的特点。所以Java程序运行时比较高效。</p>
 <h2 id="Class文件结构总结"><a href="#Class文件结构总结" class="headerlink" title="Class文件结构总结"></a>Class文件结构总结</h2><p>Class文件是一组以8位字节为基础单位的二进制流。Class文件格式采用一种类似与C语言结构体的伪结构来存储数据，这种伪结构中只有两种数据类型：无符号数和表。</p>
 <ul>
 <li>无符号数属于基本的数据类型，以u1、u2、u4、u8来分别代表1个字节、两个字节、4个字节和8个字节的无符号数，无符号数 可以用来描述数字、索引引用、数量值或者按照UTF-8编码构成字符串值。</li>
@@ -1011,7 +1013,7 @@
         
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1032,9 +1034,7 @@
         
           
         
-          
-        
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span>
         </a>
       </div>
@@ -1059,11 +1059,7 @@
         
           
         
-          
-        
-          
-        
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">标签</span>
         </a>
       </div>
