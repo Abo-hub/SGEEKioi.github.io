@@ -93,21 +93,21 @@
   };
 </script>
 
-  <meta name="description" content="[toc] Java I/O流 一、 Java IO 原理 输入 input：读取外部数据(磁盘、光盘等存储设备的数据)到程序(内存)中。 输出 output：将程序(内存)数据输出到磁盘、光盘等存储设备中。  二、 流的分类 按操作数据单位不同分为：字节流(8 bit)，字符流(16 bit) 按数据流的流向不同分为：输入流，输出流 按流的角色的不同分为：节点流，处理流  [抽象基类] | 字节">
+  <meta name="description" content="[toc] Java I/O流 一、 Java IO 原理 输入 input：读取外部数据(磁盘、光盘等存储设备的数据)到程序(内存)中。 输出 output：将程序(内存)数据输出到磁盘、光盘等存储设备中。  二、 流的分类 按操作数据单位不同分为：字节流(8 bit)，字符流(16 bit) 按数据流的流向不同分为：输入流，输出流 按流的角色的不同分为：节点流，处理流      [抽象基类]">
 <meta name="keywords" content="Java,IO">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java I&#x2F;O 总结">
 <meta property="og:url" content="https://sgeekioi.github.io/2019/07/25/javaio/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="[toc] Java I/O流 一、 Java IO 原理 输入 input：读取外部数据(磁盘、光盘等存储设备的数据)到程序(内存)中。 输出 output：将程序(内存)数据输出到磁盘、光盘等存储设备中。  二、 流的分类 按操作数据单位不同分为：字节流(8 bit)，字符流(16 bit) 按数据流的流向不同分为：输入流，输出流 按流的角色的不同分为：节点流，处理流  [抽象基类] | 字节">
+<meta property="og:description" content="[toc] Java I/O流 一、 Java IO 原理 输入 input：读取外部数据(磁盘、光盘等存储设备的数据)到程序(内存)中。 输出 output：将程序(内存)数据输出到磁盘、光盘等存储设备中。  二、 流的分类 按操作数据单位不同分为：字节流(8 bit)，字符流(16 bit) 按数据流的流向不同分为：输入流，输出流 按流的角色的不同分为：节点流，处理流      [抽象基类]">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://github.com/SGEEKioi/Review/blob/master/imgs/JavaIO.png?raw=true">
 <meta property="og:image" content="https://github.com/SGEEKioi/Review/blob/master/imgs/buffer.png?raw=true">
 <meta property="og:image" content="https://github.com/SGEEKioi/Review/blob/master/imgs/%E8%BD%AC%E6%8D%A2%E6%B5%81.png?raw=true">
-<meta property="og:updated_time" content="2019-07-25T08:13:40.115Z">
+<meta property="og:updated_time" content="2019-07-25T08:14:46.267Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java I&#x2F;O 总结">
-<meta name="twitter:description" content="[toc] Java I/O流 一、 Java IO 原理 输入 input：读取外部数据(磁盘、光盘等存储设备的数据)到程序(内存)中。 输出 output：将程序(内存)数据输出到磁盘、光盘等存储设备中。  二、 流的分类 按操作数据单位不同分为：字节流(8 bit)，字符流(16 bit) 按数据流的流向不同分为：输入流，输出流 按流的角色的不同分为：节点流，处理流  [抽象基类] | 字节">
+<meta name="twitter:description" content="[toc] Java I/O流 一、 Java IO 原理 输入 input：读取外部数据(磁盘、光盘等存储设备的数据)到程序(内存)中。 输出 output：将程序(内存)数据输出到磁盘、光盘等存储设备中。  二、 流的分类 按操作数据单位不同分为：字节流(8 bit)，字符流(16 bit) 按数据流的流向不同分为：输入流，输出流 按流的角色的不同分为：节点流，处理流      [抽象基类]">
 <meta name="twitter:image" content="https://github.com/SGEEKioi/Review/blob/master/imgs/JavaIO.png?raw=true">
 
 
@@ -405,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 16:03:46 / 修改时间：16:13:40" itemprop="dateCreated datePublished" datetime="2019-07-25T16:03:46+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 16:03:46 / 修改时间：16:14:46" itemprop="dateCreated datePublished" datetime="2019-07-25T16:03:46+08:00">2019-07-25</time>
             </span>
           
 
@@ -483,7 +483,29 @@
 <li>按数据流的<strong>流向</strong>不同分为：输入流，输出流</li>
 <li>按流的<strong>角色</strong>的不同分为：节点流，处理流</li>
 </ul>
-<p>[抽象基类] | 字节流 | 字符流<br>|—- | —-| —- |<br>输入流 | InputStream | Reader<br>输出流 | OutputSreeam | Writer</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>[抽象基类]</th>
+<th>字节流</th>
+<th>字符流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入流</td>
+<td>InputStream</td>
+<td>Reader</td>
+</tr>
+<tr>
+<td>输出流</td>
+<td>OutputSreeam</td>
+<td>Writer</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Java的IO流共设计40多个类，实际上非常规则，都是从以上4个抽象基类派生的。</p>
 <p>由这四个类派生出来的子类名称都是以其父类名作为子类名后缀。 </p>
 <p><strong>InputStream 和 Reader 是所有输入流的基类</strong></p>
