@@ -884,6 +884,9 @@ pre .javascript .function {
   border-right: 1px solid transparent;
   border-bottom: 1px solid #ddd;
   border-left: 1px solid transparent;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-delay: 0s;
 }
 @media (max-width: 413px) {
   .post-body .tabs ul.nav-tabs li.tab {
@@ -1782,7 +1785,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ad099e;
+  background: #f5d0d7;
 }
 .feed-link,
 .chat {

@@ -104,18 +104,18 @@
   };
 </script>
 
-  <meta name="description" content="【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。 【解答】所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间出生的牛肯定没有成熟。">
-<meta name="keywords" content="算法,动态规划">
+  <meta name="description" content="合并两个有序的单链表【题目】给定两个有序单链表head1和head2，请合并两个两个有序链表，合并后的链表依然有序，并返回合并后链表的头节点。例如：120-&amp;gt;2-&amp;gt;3-&amp;gt;7-&amp;gt;null1-&amp;gt;3-&amp;gt;5-&amp;gt;7-&amp;gt;9-&amp;gt;null 合并后的链表为：0-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;5-&amp;gt;7-&amp;gt;7-&amp;gt;9  【解">
+<meta name="keywords" content="算法,链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="母牛生小牛">
-<meta property="og:url" content="https://sgeekioi.github.io/2019/07/17/NumOfCow/index.html">
+<meta property="og:title" content="合并两个有序的单链表">
+<meta property="og:url" content="https://sgeekioi.github.io/2019/07/27/mergelinkedlist/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。 【解答】所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间出生的牛肯定没有成熟。">
+<meta property="og:description" content="合并两个有序的单链表【题目】给定两个有序单链表head1和head2，请合并两个两个有序链表，合并后的链表依然有序，并返回合并后链表的头节点。例如：120-&amp;gt;2-&amp;gt;3-&amp;gt;7-&amp;gt;null1-&amp;gt;3-&amp;gt;5-&amp;gt;7-&amp;gt;9-&amp;gt;null 合并后的链表为：0-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;5-&amp;gt;7-&amp;gt;7-&amp;gt;9  【解">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T03:28:58.741Z">
+<meta property="og:updated_time" content="2019-07-27T03:28:08.140Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="母牛生小牛">
-<meta name="twitter:description" content="【题目】假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。 【解答】所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间出生的牛肯定没有成熟。">
+<meta name="twitter:title" content="合并两个有序的单链表">
+<meta name="twitter:description" content="合并两个有序的单链表【题目】给定两个有序单链表head1和head2，请合并两个两个有序链表，合并后的链表依然有序，并返回合并后链表的头节点。例如：120-&amp;gt;2-&amp;gt;3-&amp;gt;7-&amp;gt;null1-&amp;gt;3-&amp;gt;5-&amp;gt;7-&amp;gt;9-&amp;gt;null 合并后的链表为：0-&amp;gt;1-&amp;gt;2-&amp;gt;3-&amp;gt;3-&amp;gt;5-&amp;gt;7-&amp;gt;7-&amp;gt;9  【解">
 
 
 
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="https://sgeekioi.github.io/2019/07/17/NumOfCow/">
+  <link rel="canonical" href="https://sgeekioi.github.io/2019/07/27/mergelinkedlist/">
 
 
 
@@ -134,7 +134,7 @@
 </script>
 
   
-  <title>母牛生小牛 | SUNBO's BLOG</title>
+  <title>合并两个有序的单链表 | SUNBO's BLOG</title>
   
 
 
@@ -379,7 +379,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sgeekioi.github.io/2019/07/17/NumOfCow/">
+    <link itemprop="mainEntityOfPage" href="https://sgeekioi.github.io/2019/07/27/mergelinkedlist/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SUNBO">
@@ -396,7 +396,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">母牛生小牛
+          <h1 class="post-title" itemprop="name headline">合并两个有序的单链表
 
               
             
@@ -422,23 +422,13 @@
                 
               
 
-              <time title="创建时间：2019-07-17 22:11:06" itemprop="dateCreated datePublished" datetime="2019-07-17T22:11:06+08:00">2019-07-17</time>
+              <time title="创建时间：2019-07-27 11:19:09 / 修改时间：11:28:08" itemprop="dateCreated datePublished" datetime="2019-07-27T11:19:09+08:00">2019-07-27</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-07-18 11:28:58" itemprop="dateModified" datetime="2019-07-18T11:28:58+08:00">2019-07-18</time>
-              </span>
             
           
 
@@ -499,12 +489,15 @@
       
 
       
-        <a id="more"></a>
-<h2 id="【题目】"><a href="#【题目】" class="headerlink" title="【题目】"></a>【题目】</h2><p>假设农场中成熟的母牛每年只会生1头小母牛，并且永远不会死。第一年农场只有一只成熟的母牛，从第二年开始，母牛开始生小母牛。每只小母牛3年成熟后又可以生小母牛。给定整数N，求出N年后牛的数量。</p>
-<h2 id="【解答】"><a href="#【解答】" class="headerlink" title="【解答】"></a>【解答】</h2><p>所有的牛都不会死，所以第N-1年的牛会毫无损失的活到第N年。同时所有成熟的牛都会生1头小牛，那么成熟的牛数量如何估计？就是第N-3年的所有牛，到第N年肯定是成熟的牛，期间出生的牛肯定没有成熟。所以C(n) = C(n-1)+C(n-3),初始项C(1)==1,C(2)==2，C(3)==3。这个和斐波那契数列数列十分相似，只不过C(n)依赖C(n-1)和C(n-3)的值</p>
-<h3 id="方法一-O-2-N"><a href="#方法一-O-2-N" class="headerlink" title="方法一  O(2^N^)"></a>方法一  O(2^N^)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">c1</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">2</span> || n == <span class="number">3</span>)</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">return</span> c1(n - <span class="number">1</span>) + c1(n - <span class="number">3</span>);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="方法-O-N"><a href="#方法-O-N" class="headerlink" title="方法  O(N)"></a>方法  O(N)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">c2</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n &lt; <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span> || n == <span class="number">2</span> || n == <span class="number">3</span>)</span><br><span class="line">            <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">3</span>;</span><br><span class="line">        <span class="keyword">int</span> pre = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">int</span> prepre = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> tmp2=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">4</span>; i &lt;=n; i++) &#123;</span><br><span class="line">            tmp1 = res;</span><br><span class="line">            tmp2 = pre;</span><br><span class="line">            res = res + prepre;</span><br><span class="line">            pre = tmp1;</span><br><span class="line">            prepre = tmp2;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
+        <h1 id="合并两个有序的单链表"><a href="#合并两个有序的单链表" class="headerlink" title="合并两个有序的单链表"></a>合并两个有序的单链表</h1><h2 id="【题目】"><a href="#【题目】" class="headerlink" title="【题目】"></a>【题目】</h2><p>给定两个有序单链表head1和head2，请合并两个两个有序链表，合并后的链表依然有序，并返回合并后链表的头节点。<br>例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">7</span>-&gt;<span class="keyword">null</span></span><br><span class="line"><span class="number">1</span>-&gt;<span class="number">3</span>-&gt;<span class="number">5</span>-&gt;<span class="number">7</span>-&gt;<span class="number">9</span>-&gt;<span class="keyword">null</span></span><br></pre></td></tr></table></figure></p>
+<p>合并后的链表为：0-&gt;1-&gt;2-&gt;3-&gt;3-&gt;5-&gt;7-&gt;7-&gt;9 </p>
+<h2 id="【解答】"><a href="#【解答】" class="headerlink" title="【解答】"></a>【解答】</h2><ol>
+<li>如果两个链表中有一个为空，说明无需合并过程，返回另一个链表头即可。</li>
+<li>比较head1 和 head2 的值，小的节点也就是合并后链表的最小节点，这个节点就是合并后链表的头节点，我们记为head；在之后的步骤里，那个链表的头节点的值更小，另一个链表的所有节点都会依次插入到这个链表中。</li>
+<li>我们让head1 和 head2 从头开始一起遍历，比较每次遍历到的两个节点的值，记为cur1和cur2，然后根据大小关系做出不同的调整，同时用一个变量pre表示上次比较较小的值。<br>4.如果其中一条链表走完，那就把另一条链表剩下的部分直接拼到最后，调整结束。</li>
+<li>返回合并后链表的头节点head即可。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//链表结构</span></span><br><span class="line"><span class="class"><span class="keyword">class</span>  <span class="title">Node</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> value;</span><br><span class="line">    <span class="keyword">public</span> Node next;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> data)</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.value = data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MergeLinkedList</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Node <span class="title">merge</span><span class="params">(Node head1,Node head2)</span></span>&#123;</span><br><span class="line">        <span class="comment">//如果其中一条链表为空，直接返回另一条链表的头节点</span></span><br><span class="line">        <span class="keyword">if</span>(head1 == <span class="keyword">null</span> || head2 == <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head1 !=<span class="keyword">null</span> ? head1 : head2;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//将头节点较小的链表赋给head</span></span><br><span class="line">        Node head = head1.value &lt; head2.value ? head1 : head2;</span><br><span class="line">        <span class="comment">//较小链表的节点值</span></span><br><span class="line">        Node cur1 = head == head1 ? head1 : head2;</span><br><span class="line">        <span class="comment">//另一条链表的节点值</span></span><br><span class="line">        Node cur2 = head == head1 ? head2: head1;</span><br><span class="line">        <span class="comment">//保存上次比较时较小的值</span></span><br><span class="line">        Node pre = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">//保存cur2的下个节点</span></span><br><span class="line">        Node next = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">while</span> (cur1 != <span class="keyword">null</span> &amp;&amp; cur2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="comment">//如果cur1&lt;cur2 将cur1往后移</span></span><br><span class="line">            <span class="keyword">if</span>(cur1.value &lt;= cur2.value)&#123;</span><br><span class="line">                pre = cur1;</span><br><span class="line">                cur1 = cur1.next;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;  <span class="comment">//如果cur1&gt;cur2 将cur2插入到head链表</span></span><br><span class="line">                next = cur2.next;</span><br><span class="line">                pre.next = cur2;</span><br><span class="line">                cur2.next = cur1;</span><br><span class="line">                cur2 = next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        pre.next = cur1 == <span class="keyword">null</span> ? cur2: cur1;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -542,7 +535,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://sgeekioi.github.io/2019/07/17/NumOfCow/" title="母牛生小牛">https://sgeekioi.github.io/2019/07/17/NumOfCow/</a>
+    <a href="https://sgeekioi.github.io/2019/07/27/mergelinkedlist/" title="合并两个有序的单链表">https://sgeekioi.github.io/2019/07/27/mergelinkedlist/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -560,7 +553,7 @@
           
             <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/动态规划/" rel="tag"><i class="fa fa-tag"></i> 动态规划</a>
+            <a href="/tags/链表/" rel="tag"><i class="fa fa-tag"></i> 链表</a>
           
         </div>
       
@@ -573,15 +566,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/07/25/pringmatrix/" rel="next" title="顺时针打印矩阵">
+                <i class="fa fa-chevron-left"></i> 顺时针打印矩阵
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/18/JVM1/" rel="prev" title="JVM(一)Java内存区域与内存溢出异常">
-                JVM(一)Java内存区域与内存溢出异常 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -765,7 +758,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【题目】"><span class="nav-number">1.</span> <span class="nav-text">【题目】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【解答】"><span class="nav-number">2.</span> <span class="nav-text">【解答】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一-O-2-N"><span class="nav-number">2.1.</span> <span class="nav-text">方法一  O(2^N^)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法-O-N"><span class="nav-number">2.2.</span> <span class="nav-text">方法  O(N)</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#合并两个有序的单链表"><span class="nav-number">1.</span> <span class="nav-text">合并两个有序的单链表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【题目】"><span class="nav-number">1.1.</span> <span class="nav-text">【题目】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【解答】"><span class="nav-number">1.2.</span> <span class="nav-text">【解答】</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -967,46 +960,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src></script>
-
-    
   
 
 
