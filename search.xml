@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>WSL与图形界面安装------放弃虚拟机吧</title>
+      <link href="/2019/07/30/wsl/"/>
+      <url>/2019/07/30/wsl/</url>
+      
+        <content type="html"><![CDATA[<p>记录下在自己安装wsl的心(cai)路(坑)过程</p><h2 id="需要安装的插件"><a href="#需要安装的插件" class="headerlink" title="需要安装的插件"></a>需要安装的插件</h2><p><a href="https://sourceforge.net/projects/vcxsrv/" target="_blank" rel="noopener">VcXrc</a></p><p>参考<br>[1] <a href="https://www.linuxidc.com/Linux/2018-12/156031.htm" target="_blank" rel="noopener">https://www.linuxidc.com/Linux/2018-12/156031.htm</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> WSL </tag>
+            
+            <tag> Linux </tag>
+            
+            <tag> 系统 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>合并两个有序的单链表</title>
       <link href="/2019/07/27/mergelinkedlist/"/>
       <url>/2019/07/27/mergelinkedlist/</url>
