@@ -104,18 +104,18 @@
   };
 </script>
 
-  <meta name="description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用—   | — |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚拟">
-<meta name="keywords" content="Java,JVM">
+  <meta name="description" content="【介绍】顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。 【描述】计算a的n次方就是将n个a乘起来a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{">
+<meta name="keywords" content="算法,数学">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JVM(三)虚拟机性能监控与故障处理工具">
-<meta property="og:url" content="https://sgeekioi.github.io/2019/07/18/JVM3/index.html">
+<meta property="og:title" content="快速幂">
+<meta property="og:url" content="https://sgeekioi.github.io/2019/07/31/fastpower/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用—   | — |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚拟">
+<meta property="og:description" content="【介绍】顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。 【描述】计算a的n次方就是将n个a乘起来a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-18T03:31:35.218Z">
+<meta property="og:updated_time" content="2019-07-31T07:58:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JVM(三)虚拟机性能监控与故障处理工具">
-<meta name="twitter:description" content="JDK命令行工具这些命令在JDK安装目录的bin目录下名称 | 主要作用—   | — |jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据jinfo | Configuration Info for Java，显示虚拟">
+<meta name="twitter:title" content="快速幂">
+<meta name="twitter:description" content="【介绍】顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。 【描述】计算a的n次方就是将n个a乘起来a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{">
 
 
 
@@ -123,7 +123,7 @@
 
   
   
-  <link rel="canonical" href="https://sgeekioi.github.io/2019/07/18/JVM3/">
+  <link rel="canonical" href="https://sgeekioi.github.io/2019/07/31/fastpower/">
 
 
 
@@ -134,7 +134,7 @@
 </script>
 
   
-  <title>JVM(三)虚拟机性能监控与故障处理工具 | SUNBO's BLOG</title>
+  <title>快速幂 | SUNBO's BLOG</title>
   
 
 
@@ -379,7 +379,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sgeekioi.github.io/2019/07/18/JVM3/">
+    <link itemprop="mainEntityOfPage" href="https://sgeekioi.github.io/2019/07/31/fastpower/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SUNBO">
@@ -396,7 +396,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JVM(三)虚拟机性能监控与故障处理工具
+          <h1 class="post-title" itemprop="name headline">快速幂
 
               
             
@@ -422,7 +422,7 @@
                 
               
 
-              <time title="创建时间：2019-07-18 11:07:38 / 修改时间：11:31:35" itemprop="dateCreated datePublished" datetime="2019-07-18T11:07:38+08:00">2019-07-18</time>
+              <time title="创建时间：2019-07-31 11:29:06 / 修改时间：15:58:17" itemprop="dateCreated datePublished" datetime="2019-07-31T11:29:06+08:00">2019-07-31</time>
             </span>
           
 
@@ -441,7 +441,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/JVM/" itemprop="url" rel="index"><span itemprop="name">JVM</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
 
                 
                 
@@ -489,85 +489,31 @@
       
 
       
-        <a id="more"></a>
-<h2 id="JDK命令行工具"><a href="#JDK命令行工具" class="headerlink" title="JDK命令行工具"></a>JDK命令行工具</h2><p>这些命令在JDK安装目录的bin目录下<br>名称 | 主要作用<br>—   | — |<br>jps  | JVM Process Status Tool,显示指定系统内所有的HotSpot虚拟机进程<br>jstat | JVM Statistics Monitoring Tool，用于收集HotSpot虚拟机各方面的运行数据<br>jinfo | Configuration Info for Java，显示虚拟机配置信息<br>jmap | Memory Map for Java，生成虚拟机的内存转储快照<br>jhat | JVM Heap Dump Browser,用于分析heapdump文件，他会建立一个HTTP/HTML服务器，让用户可以i在浏览器查看分析结果<br>jstack | Stack Trace for Java，显示虚拟机的线程快照</p>
-<h3 id="jps-查看所有Java进程"><a href="#jps-查看所有Java进程" class="headerlink" title="jps:查看所有Java进程"></a>jps:查看所有Java进程</h3><p>可以列出正在运行的虚拟机进程，并显示虚拟机执行主类名称以及这些进程的本地虚拟机唯一ID(LVMID)</p>
-<h4 id="jps命令格式"><a href="#jps命令格式" class="headerlink" title="jps命令格式"></a>jps命令格式</h4><p>jps [options] [hostid]</p>
-<p>jps工具主要选项<br>选项    |   作用<br>—  |   —<br>-q  |   只输出LVMID，省略主类的名称<br>-m  |   输出虚拟机 进程启动时传递给主类main()函数的参数<br>-1  |   输出主类的全名，如果进程执行的是jar包，输出jar包路径<br>-v  |   输出虚拟机进程启动时JVM参数</p>
-<h3 id="jstat：虚拟机统计信息监视工具"><a href="#jstat：虚拟机统计信息监视工具" class="headerlink" title="jstat：虚拟机统计信息监视工具"></a>jstat：虚拟机统计信息监视工具</h3><p>用于监视虚拟机各种运行状态信息的命令工具。它可以显示本地或者远程虚拟机进程中的类装载、内存、垃圾收集、JIT编译等运行数据，在没有GUI图形界面，只提供了纯文本控制台环境的服务器上，它将是运行期间定位虚拟机性能问题的首选工具。</p>
-<h4 id="jstat命令格式"><a href="#jstat命令格式" class="headerlink" title="jstat命令格式"></a>jstat命令格式</h4><p>jstat -<option> [-t] [-h<lines>] <vmid> [<interval> [<count>]] </count></interval></vmid></lines></option></p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>选项</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-class</td>
-<td>监视类加载、卸载数量、总空间以及类加载所消耗的时间</td>
-</tr>
-<tr>
-<td>-gc</td>
-<td>监视Java堆状态，包括Eden区、两个Survivor、老年代、永久代等的容量、已用空间、GC时间合计等信息。</td>
-</tr>
-<tr>
-<td>-gccapacity</td>
-<td>监视内容与-gc基本相同，但输出主要关注Java堆各个区域用到的最大、最小空间</td>
-</tr>
-<tr>
-<td>-gcutil</td>
-<td>监视内容与-gc基本相同，但输出主要关注已使用空间占总空间的百分比</td>
-</tr>
-<tr>
-<td>-gccause</td>
-<td>与-gcutil功能一样，但是会额外输出导致上一次GC产生的原因</td>
-</tr>
-<tr>
-<td>-gcnew</td>
-<td>监视新生代GC情况</td>
-</tr>
-<tr>
-<td>-gcnewcapcity</td>
-<td>监视内容与-gcnew基本相同，但主要关注使用到的最大、最小空间</td>
-</tr>
-<tr>
-<td>-gcold</td>
-<td>监视老年代GC状态</td>
-</tr>
-<tr>
-<td>-gcoldcapacity</td>
-<td>监视内容与-gcold基本相同，输出主要关注使用到的额最大、最小空间</td>
-</tr>
-<tr>
-<td>-gcpermcapacity</td>
-<td>输出永久代使用到的最大、最小空间</td>
-</tr>
-<tr>
-<td>-complier</td>
-<td>输出JIT编译器编译过的方法，耗时信息</td>
-</tr>
-<tr>
-<td>-printcompilation</td>
-<td>输出已经被JIT编译的方法</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 id="jinfo-Java配置信息工具"><a href="#jinfo-Java配置信息工具" class="headerlink" title="jinfo:Java配置信息工具"></a>jinfo:Java配置信息工具</h3><p>实时查看和调整虚拟机各项参数</p>
-<h4 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式"></a>命令格式</h4><p>jinfo [option] pid</p>
-<ul>
-<li>jinfo -vmid:输出对应名称的参数的具体值。比如输出MaxHeapSize、查看当前jvm进程是否开启打印GC日志。</li>
-<li>jinfo -flag [+ | -]name vimd 开启或者关闭对应的名称的参数<br>使用此命令可以在不开启虚拟机的情况下，可以动态的修改jvm的参数。尤其是线上的环境特别有用。</li>
-</ul>
-<h3 id="jmap：Java内存映像工具"><a href="#jmap：Java内存映像工具" class="headerlink" title="jmap：Java内存映像工具"></a>jmap：Java内存映像工具</h3><p>用于生成堆转储块照。如果不使用jmap命令，要想获取Java堆转储快照，还可以使用“-XX：HeapDumpOnOutOfMemoryErroy”参数，可以让虚拟机在OOM异常出现之后自动生成dump文件，Linux命令可以通过“kill -3”发送进程退出信号也能拿到dump文件。<br>jmap的作用不仅仅是为了获取dump文件，它还可以查询finalizer执行队列、Java堆和永久代的详细信息，如空间使用率、当前使用的是哪种收集器等。</p>
-<h3 id="jhat：虚拟机堆转储快照分析工具"><a href="#jhat：虚拟机堆转储快照分析工具" class="headerlink" title="jhat：虚拟机堆转储快照分析工具"></a>jhat：虚拟机堆转储快照分析工具</h3><p>与jmap搭配使用，来分析jmap生成的堆转储快照。它会建立一个HTTP/HTML服务器，让用户可以在浏览器上查看分析结果。</p>
-<h3 id="jstack：Java堆栈跟踪工具"><a href="#jstack：Java堆栈跟踪工具" class="headerlink" title="jstack：Java堆栈跟踪工具"></a>jstack：Java堆栈跟踪工具</h3><p>用于生成虚拟机当前时刻的线程快照。线程快照就是当前虚拟机内每一条线程正在执行的方法堆栈的集合。</p>
-<h4 id="命令格式-1"><a href="#命令格式-1" class="headerlink" title="命令格式"></a>命令格式</h4><p>jstack [option] vmid<br>option 选项<br>选项 | 作用<br>— | —<br>-F | 当输出的请求不被响应时，强制输出线程堆<br>-l | 除堆栈外，显示关于锁的附加信息<br>-m | 如果调用到本地方法的话，可以显示C/C++的堆栈</p>
-<h2 id="JDK的可视化工具"><a href="#JDK的可视化工具" class="headerlink" title="JDK的可视化工具"></a>JDK的可视化工具</h2><h3 id="JConsole：Java监视与管理控制台"><a href="#JConsole：Java监视与管理控制台" class="headerlink" title="JConsole：Java监视与管理控制台"></a>JConsole：Java监视与管理控制台</h3><p>是一种基于JMX的可视化监视、管理工具。可以很方便的监视本地及远程服务器的java进程的内存使用情况。你可以在控制台输出console命令启动或者在JDK目录下的bin目录找到jconsole.exe启动。</p>
-<p>参考：《深入理解java虚拟机 第2版》<br>      JavaGuide：<a href="https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/docs/java/jvm/</a></p>
+        <h2 id="【介绍】"><a href="#【介绍】" class="headerlink" title="【介绍】"></a>【介绍】</h2><p>顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。</p>
+<h2 id="【描述】"><a href="#【描述】" class="headerlink" title="【描述】"></a>【描述】</h2><p>计算a的n次方就是将n个a乘起来<script type="math/tex">a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}</script>。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{bc} , a^b \times a^b= a^{2b} = {a^b}^2$。二进制取幂的想法是，我们将取幂的任务按照指数的<strong>二进制表示</strong>来分割成更小的任务。我们来举个例子</p>
+<blockquote>
+<p>11的二进制数为 1011。 对进制不太理解的戳<a href>这里</a> </p>
+</blockquote>
+<script type="math/tex; mode=display">\begin{equation}
+3^{11} = 3^{1011} = 3^8 \cdot 3^2 \cdot 3^1
+\end{equation}</script><p>上面这个算式是怎么来的呢。看下面</p>
+<script type="math/tex; mode=display">\begin{equation}
+3^1 = {3^2}^0 = 3 \\
+3^2 = {3^2}^1 = 9 \\
+3^8 = {3^2}^3 = 6561 
+\end{equation}</script><p>也就是为了计算<script type="math/tex">3^{11}</script>,我们只需要将二进制位对应为1的整系数幂乘起来就行了：</p>
+<script type="math/tex; mode=display">\begin{equation}
+3^{11} = 3 \times 9 \times 6561 = 177147
+\end{equation}</script><p>将上述过程说的形式化一些，如果把n写作二进制为<script type="math/tex">(n_1n_{t-1}…n_12^1+n_02^0)</script>,那么有：</p>
+<script type="math/tex; mode=display">\begin{equation}
+n=n_t2^t+n_{t-1}2^{t-1}+…+n_12^1+n_02^1
+\end{equation}</script><p>其中$n \epsilon 0,1$ 。那么就有</p>
+<script type="math/tex; mode=display">\begin{equation}
+a^n=(a^{n_t2^t+…+n_02^0}) \\
+=a^{n_02^0} \times a^{n_12^1} \times … \times a^{n_02^0} 
+\end{equation}</script><p>根据上式我们发现，原问题被我转换成了形式相同的子问题的乘积，并且我们可以在常数时间内从<script type="math/tex">2^i</script>项推出<script type="math/tex">2^{i+1}</script>项。这个算法的复杂度是<script type="math/tex">O(log_2n)</script>的。</p>
+<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><h3 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法"></a>递归方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">power1</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> res = power(a,n/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>((n%<span class="number">2</span>)==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res * res * a;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> res * res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="非递归式"><a href="#非递归式" class="headerlink" title="非递归式"></a>非递归式</h3><p>它在循环的过程将二进制为1时对应的幂累乘到答案中。尽管两者的理论复杂度相同，但第二种在实践过程中的速度会比递归式更快的，因为递归会重复运算花费一定开销。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">power2</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">double</span> res = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>((n&amp;<span class="number">1</span>)==<span class="number">1</span>)&#123;</span><br><span class="line">                res*=a;</span><br><span class="line">            &#125;</span><br><span class="line">            a*=a;</span><br><span class="line">            n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -606,7 +552,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://sgeekioi.github.io/2019/07/18/JVM3/" title="JVM(三)虚拟机性能监控与故障处理工具">https://sgeekioi.github.io/2019/07/18/JVM3/</a>
+    <a href="https://sgeekioi.github.io/2019/07/31/fastpower/" title="快速幂">https://sgeekioi.github.io/2019/07/31/fastpower/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -622,9 +568,9 @@
         
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
-            <a href="/tags/JVM/" rel="tag"><i class="fa fa-tag"></i> JVM</a>
+            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
           
         </div>
       
@@ -637,8 +583,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/18/JVM2/" rel="next" title="JVM(二)垃圾收集器与内存分配策略">
-                <i class="fa fa-chevron-left"></i> JVM(二)垃圾收集器与内存分配策略
+              <a href="/2019/07/30/wsl/" rel="next" title="WSL与图形界面安装------放弃虚拟机吧">
+                <i class="fa fa-chevron-left"></i> WSL与图形界面安装------放弃虚拟机吧
               </a>
             
           </div>
@@ -646,10 +592,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/07/18/JVM4/" rel="prev" title="JVM(四)类文件结构">
-                JVM(四)类文件结构 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -845,7 +787,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK命令行工具"><span class="nav-number">1.</span> <span class="nav-text">JDK命令行工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jps-查看所有Java进程"><span class="nav-number">1.1.</span> <span class="nav-text">jps:查看所有Java进程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jps命令格式"><span class="nav-number">1.1.1.</span> <span class="nav-text">jps命令格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jstat：虚拟机统计信息监视工具"><span class="nav-number">1.2.</span> <span class="nav-text">jstat：虚拟机统计信息监视工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jstat命令格式"><span class="nav-number">1.2.1.</span> <span class="nav-text">jstat命令格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jinfo-Java配置信息工具"><span class="nav-number">1.3.</span> <span class="nav-text">jinfo:Java配置信息工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令格式"><span class="nav-number">1.3.1.</span> <span class="nav-text">命令格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jmap：Java内存映像工具"><span class="nav-number">1.4.</span> <span class="nav-text">jmap：Java内存映像工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jhat：虚拟机堆转储快照分析工具"><span class="nav-number">1.5.</span> <span class="nav-text">jhat：虚拟机堆转储快照分析工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jstack：Java堆栈跟踪工具"><span class="nav-number">1.6.</span> <span class="nav-text">jstack：Java堆栈跟踪工具</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#命令格式-1"><span class="nav-number">1.6.1.</span> <span class="nav-text">命令格式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JDK的可视化工具"><span class="nav-number">2.</span> <span class="nav-text">JDK的可视化工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JConsole：Java监视与管理控制台"><span class="nav-number">2.1.</span> <span class="nav-text">JConsole：Java监视与管理控制台</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【介绍】"><span class="nav-number">1.</span> <span class="nav-text">【介绍】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【描述】"><span class="nav-number">2.</span> <span class="nav-text">【描述】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【代码实现】"><span class="nav-number">3.</span> <span class="nav-text">【代码实现】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#递归方法"><span class="nav-number">3.1.</span> <span class="nav-text">递归方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非递归式"><span class="nav-number">3.2.</span> <span class="nav-text">非递归式</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1067,6 +1009,46 @@ setInterval("createtime()",250);
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
