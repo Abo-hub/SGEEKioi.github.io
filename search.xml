@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>MySql</title>
+      <link href="/2019/08/05/MySql/"/>
+      <url>/2019/08/05/MySql/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>产品经理必知的20个数据指标</title>
+      <link href="/2019/08/03/pm20/"/>
+      <url>/2019/08/03/pm20/</url>
+      
+        <content type="html"><![CDATA[<h2 id="广告指标"><a href="#广告指标" class="headerlink" title="广告指标"></a>广告指标</h2><p>不同时期产品的宣传要选择合适的投放媒体和渠道，这就是要我们了解基本的广告指标数据</p><h3 id="CPM"><a href="#CPM" class="headerlink" title="CPM"></a>CPM</h3><p>cost per impression， 按前次展示付费，指通过某一媒体投放广告，听到或看到此广告的人道道一千人平均所要花费的广告费用  </p><script type="math/tex; mode=display">CPM = (广告人数/到达人数) \times 1000</script><p>比如投入广告费用200元，有10000人浏览过此广告，则</p><script type="math/tex; mode=display">CPM = (200/100000) \ times 1000 = 20元</script><p>CPM取决于产品的印象，不是评价广告效果的单一指标，是不同媒体进行衡量而指定的一个相对指标，通过比较不同渠道的广告收入找出效果最好的渠道。</p><h3 id="CPA"><a href="#CPA" class="headerlink" title="CPA"></a>CPA</h3><p>cost per action,按照广告使用户产生一定行为而计费，不限广告投放量，对于用户行为的定义依产品而定，包括形成一次交易、获得一个注册用户、下载一次软件、或是填写一次有效问卷等，这些统称为用户行为转化。</p><script type="math/tex; mode=display">CPA=广告费用/有效转化次数</script><p>转化次数的统计较为困难，另外由于广告被点击后会触发用户后续行为(如注册或消费行为),在网站中不大受欢迎。</p><h3 id="CPC"><a href="#CPC" class="headerlink" title="CPC"></a>CPC</h3><p>cost per click,按点击量付费，对某一广告点击所产生的广告费用，统计点击量可以设定一定标准，比如对于同一个IP，在一个时间段内重复点击，统计为一次，也可忽略IP的限制，直接统计总点击量。</p><script type="math/tex; mode=display">CPC=广告费用/点击量</script><p>CPC为网络广告投放效果的重要参考数据，但也有其缺陷，比如虽然用户没有点击广告，但他已经看到了广告。</p><h3 id="CPS"><a href="#CPS" class="headerlink" title="CPS"></a>CPS</h3><p>cost per sales,按销售付费，按照广告点击之后产生的实际销售必输来计算广告费用，</p><script type="math/tex; mode=display">CPS=广告费用/有效销售量</script><p>适合购物类、导购类、网址导航类网站，需要精确的流量才能带来转化。</p><h3 id="CPT"><a href="#CPT" class="headerlink" title="CPT"></a>CPT</h3><p>cost per try，按试用次数付费，主要是移动应用的渠道营销平台可以十万或使用为付费标准。</p><script type="math/tex; mode=display">CPT=广告费用/有效使用次数</script><p>则会中方式的特点是按用户使用时常或使用周期计费，可以从根本上杜绝刷流量，是最真实有效快捷的营销方式之一。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 产品经理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 产品经理 </tag>
+            
+            <tag> 数据指标 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>快速幂</title>
       <link href="/2019/07/31/fastpower/"/>
       <url>/2019/07/31/fastpower/</url>
@@ -20,9 +60,9 @@
       
         <tags>
             
-            <tag> 数学 </tag>
-            
             <tag> 算法 </tag>
+            
+            <tag> 数学 </tag>
             
         </tags>
       
