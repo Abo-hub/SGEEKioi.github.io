@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://sgeekioi.github.io/2019/08/19/springmvc/</loc>
+    
+    <lastmod>2019-08-19T15:28:40.001Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://sgeekioi.github.io/2019/08/05/MySql/</loc>
     
-    <lastmod>2019-08-05T07:17:35.436Z</lastmod>
+    <lastmod>2019-08-14T14:37:13.610Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://sgeekioi.github.io/2019/08/14/restful/</loc>
+    
+    <lastmod>2019-08-14T03:16:25.093Z</lastmod>
     
   </url>
   

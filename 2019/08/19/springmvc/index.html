@@ -104,18 +104,17 @@
   };
 </script>
 
-  <meta name="description" content="【介绍】顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。 【描述】计算a的n次方就是将n个a乘起来a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{">
-<meta name="keywords" content="算法,数学">
+  <meta name="description" content="@RequestMapping Spring MVC 使用@RequestMapping注解为控制器指定可以处理哪些URL请求 在控制的类定义以及方法定义处都可标记 类定义处：提供初步的请求映射信息。 方法处：提供进一步的细分映射信息。相对于类定义出的URL   DispatcherServlet 截或请求后，就通过控制器上@RequestMapping提供的映射信息确定请求所对应的处理方法。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="快速幂">
-<meta property="og:url" content="https://sgeekioi.github.io/2019/07/31/fastpower/index.html">
+<meta property="og:title" content="springmvc">
+<meta property="og:url" content="https://sgeekioi.github.io/2019/08/19/springmvc/index.html">
 <meta property="og:site_name" content="SUNBO&#39;s BLOG">
-<meta property="og:description" content="【介绍】顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。 【描述】计算a的n次方就是将n个a乘起来a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{">
+<meta property="og:description" content="@RequestMapping Spring MVC 使用@RequestMapping注解为控制器指定可以处理哪些URL请求 在控制的类定义以及方法定义处都可标记 类定义处：提供初步的请求映射信息。 方法处：提供进一步的细分映射信息。相对于类定义出的URL   DispatcherServlet 截或请求后，就通过控制器上@RequestMapping提供的映射信息确定请求所对应的处理方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-07-31T07:58:17.000Z">
+<meta property="og:updated_time" content="2019-08-19T15:28:40.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="快速幂">
-<meta name="twitter:description" content="【介绍】顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。 【描述】计算a的n次方就是将n个a乘起来a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{">
+<meta name="twitter:title" content="springmvc">
+<meta name="twitter:description" content="@RequestMapping Spring MVC 使用@RequestMapping注解为控制器指定可以处理哪些URL请求 在控制的类定义以及方法定义处都可标记 类定义处：提供初步的请求映射信息。 方法处：提供进一步的细分映射信息。相对于类定义出的URL   DispatcherServlet 截或请求后，就通过控制器上@RequestMapping提供的映射信息确定请求所对应的处理方法。">
 
 
 
@@ -123,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="https://sgeekioi.github.io/2019/07/31/fastpower/">
+  <link rel="canonical" href="https://sgeekioi.github.io/2019/08/19/springmvc/">
 
 
 
@@ -134,7 +133,7 @@
 </script>
 
   
-  <title>快速幂 | SUNBO's BLOG</title>
+  <title>springmvc | SUNBO's BLOG</title>
   
 
 
@@ -379,7 +378,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://sgeekioi.github.io/2019/07/31/fastpower/">
+    <link itemprop="mainEntityOfPage" href="https://sgeekioi.github.io/2019/08/19/springmvc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SUNBO">
@@ -396,7 +395,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">快速幂
+          <h2 class="post-title" itemprop="name headline">springmvc
 
               
             
@@ -422,7 +421,7 @@
                 
               
 
-              <time title="创建时间：2019-07-31 11:29:06 / 修改时间：15:58:17" itemprop="dateCreated datePublished" datetime="2019-07-31T11:29:06+08:00">2019-07-31</time>
+              <time title="创建时间：2019-08-19 13:28:25 / 修改时间：23:28:40" itemprop="dateCreated datePublished" datetime="2019-08-19T13:28:25+08:00">2019-08-19</time>
             </span>
           
 
@@ -432,21 +431,6 @@
             
           
 
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数学/" itemprop="url" rel="index"><span itemprop="name">数学</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -489,31 +473,61 @@
       
 
       
-        <h2 id="【介绍】"><a href="#【介绍】" class="headerlink" title="【介绍】"></a>【介绍】</h2><p>顾名思义，快速幂就是快速算底数的n次幂。其时间复杂度为 O(log₂N)， 与朴素的O(N)相比效率有了极大的提高。</p>
-<h2 id="【描述】"><a href="#【描述】" class="headerlink" title="【描述】"></a>【描述】</h2><p>计算a的n次方就是将n个a乘起来<script type="math/tex">a^n = \underbrace{a \times a \times a...\times a}_{\text{n个a}}</script>。但是，当n的值特别大的时候，这种累乘的方法就不合适了。不过，由结合律我们知道$a^b + a^c = a^{bc} , a^b \times a^b= a^{2b} = {a^b}^2$。二进制取幂的想法是，我们将取幂的任务按照指数的<strong>二进制表示</strong>来分割成更小的任务。我们来举个例子</p>
+        <h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><ul>
+<li>Spring MVC 使用@RequestMapping注解为控制器指定可以处理哪些URL请求</li>
+<li>在控制的<strong>类定义</strong>以及<strong>方法定义</strong>处都可标记<ul>
+<li>类定义处：提供初步的请求映射信息。</li>
+<li>方法处：提供进一步的细分映射信息。相对于类定义出的URL</li>
+</ul>
+</li>
+<li><p>DispatcherServlet 截或请求后，就通过控制器上@RequestMapping提供的映射信息确定请求所对应的处理方法。</p>
 <blockquote>
-<p>11的二进制数为 1011。 对进制不太理解的戳<a href>这里</a> </p>
+<p>HTTP请求</p>
+<ul>
+<li>请求方法</li>
+<li>请求URL</li>
+<li>HTTP 协议记忆版本</li>
+<li>报文头</li>
+<li>报文体</li>
+</ul>
 </blockquote>
-<script type="math/tex; mode=display">\begin{equation}
-3^{11} = 3^{1011} = 3^8 \cdot 3^2 \cdot 3^1
-\end{equation}</script><p>上面这个算式是怎么来的呢。看下面</p>
-<script type="math/tex; mode=display">\begin{equation}
-3^1 = {3^2}^0 = 3 \\
-3^2 = {3^2}^1 = 9 \\
-3^8 = {3^2}^3 = 6561 
-\end{equation}</script><p>也就是为了计算<script type="math/tex">3^{11}</script>,我们只需要将二进制位对应为1的整系数幂乘起来就行了：</p>
-<script type="math/tex; mode=display">\begin{equation}
-3^{11} = 3 \times 9 \times 6561 = 177147
-\end{equation}</script><p>将上述过程说的形式化一些，如果把n写作二进制为<script type="math/tex">(n_1n_{t-1}…n_12^1+n_02^0)</script>,那么有：</p>
-<script type="math/tex; mode=display">\begin{equation}
-n=n_t2^t+n_{t-1}2^{t-1}+…+n_12^1+n_02^1
-\end{equation}</script><p>其中$n \epsilon 0,1$ 。那么就有</p>
-<script type="math/tex; mode=display">\begin{equation}
-a^n=(a^{n_t2^t+…+n_02^0}) \\
-=a^{n_02^0} \times a^{n_12^1} \times … \times a^{n_02^0} 
-\end{equation}</script><p>根据上式我们发现，原问题被我转换成了形式相同的子问题的乘积，并且我们可以在常数时间内从<script type="math/tex">2^i</script>项推出<script type="math/tex">2^{i+1}</script>项。这个算法的复杂度是<script type="math/tex">O(log_2n)</script>的。</p>
-<h2 id="【代码实现】"><a href="#【代码实现】" class="headerlink" title="【代码实现】"></a>【代码实现】</h2><h3 id="递归方法"><a href="#递归方法" class="headerlink" title="递归方法"></a>递归方法</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">power1</span><span class="params">(<span class="keyword">double</span> a, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">double</span> res = power(a,n/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>((n%<span class="number">2</span>)==<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> res * res * a;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> res * res;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="非递归式"><a href="#非递归式" class="headerlink" title="非递归式"></a>非递归式</h3><p>它在循环的过程将二进制为1时对应的幂累乘到答案中。尽管两者的理论复杂度相同，但第二种在实践过程中的速度会比递归式更快的，因为递归会重复运算花费一定开销。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">power2</span><span class="params">(<span class="keyword">double</span> a,<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">double</span> res = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (n&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>((n&amp;<span class="number">1</span>)==<span class="number">1</span>)&#123;</span><br><span class="line">                res*=a;</span><br><span class="line">            &#125;</span><br><span class="line">            a*=a;</span><br><span class="line">            n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+</li>
+<li><p>@RequestMapping除了可以使用<strong>请求URL</strong>映射请求外，<strong>还可以使用请求方法、请求参数及请求头映射请求</strong></p>
+</li>
+<li>@RequestMapping的value、method、params及heads分别标识<strong>请求URL、请求方法、请求参数及请求头的映射条件</strong>，它们之间是<strong>与</strong>的关系联合使用多个条件可以让请求映射更加精确话。</li>
+<li>params和headers支持简单的表达式：<ul>
+<li>param1：表示请求必须包含为param1的请求参数</li>
+<li>!param1: 表示请求不能包含名为param1的请求参数</li>
+<li>param1 != value1: 表示请求包含名为param1的请求参数，但其值不能为value1</li>
+<li>{“parma1=value1”,”param1”}：请求必须包含为param1和param2的两个请求参数，且param1的参数值为value1</li>
+</ul>
+</li>
+</ul>
+<h3 id="PathVariable-映射URL绑定的占位符"><a href="#PathVariable-映射URL绑定的占位符" class="headerlink" title="@PathVariable 映射URL绑定的占位符"></a>@PathVariable 映射URL绑定的占位符</h3><p>带占位符的URL式Spring3.0 新增的功能，该功能在SpringMVC向<strong>REST</strong>目标发展过程中具有里程碑的意义</p>
+<p>通过@PathVariable可以将URL中占位符参数绑定到控制器处理方法的形参中：URL中的{xxx}占位符可以通过@PathVariable(“xxx”)绑定到操作方法的形参中。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"delete/&#123;id&#125;"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">delete</span><span class="params">(@PathVariable(<span class="string">"id"</span>)</span> Integer id)</span>&#123;</span><br><span class="line">    <span class="function">UserDao <span class="title">delete</span><span class="params">(id)</span></span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"redirect:/user/list.actrion"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h2><p>REST(Repersentational State Transfer)。资源表现层状态转化。是目前最流行的一种互联网软甲架构。它结构清晰、符合标准、已于理解、扩展方便，所以正得到越来越多的网站的采用</p>
+<ul>
+<li>资源（Resoucres): 网络上的一个实体，或者说是网络上的一个具体信息。它可以是一段文段、一张图片、一首歌曲、一直服务，总之就是一个具体的存在。一用一个URI(统一资源定位符)指向它，每种资源对应一个特定你的URI，要获取这个资源，访问它的URI就可以。因此URI即为每一个资源的duyiwuer的标识符。</li>
+<li>表现层(Representation): 把资源具体呈现出来的形式，叫做它的表现层(Representation)。比如，文本可以用txt格式表现，也可以用HTML格式、XML<br>格式、JSON格式表现，甚至可以采用二进制格式</li>
+<li>状态转换(State Transfer): 没发出一个请求，就代表领了刻划断和服务端的一次交互过程，HTTP协议，是一个状态写于一，即所有的状态都保存在服务端。因此，如果客户端想要操作服务器，必须通过某种手段，让服务端发生”状态转化”。而 这种转换时简历在表现层之上的，所以就是“表现层状态转化”，具体说就是<strong>HTTP协议理面，四个表示操作方式的动词：GET、PUT、POST、DELETE。它们分别对应四种基本操作：GET用来获取资源，POST用来新建资源、PUT用来更新资源、DELETE用来删除资源。</strong></li>
+</ul>
+<h2 id="请求处理方法签名"><a href="#请求处理方法签名" class="headerlink" title="请求处理方法签名"></a>请求处理方法签名</h2><ul>
+<li>SpringMVC 通过分析处理方法的签名，将HTTP请求信息绑定到处理方法的响应形参中。</li>
+<li>SpringMVC对控制器处理方法签名的限制时很宽松的，几乎可以按细化的任何方式对方法进行签名。</li>
+<li>必要时可以对方法及方法形参标注响应的注解(@PathVariable、@RequestParam、@RequestHeader等)、SpringMVC框架会将HTTP请求的信息绑定到响应的方法形参中，并根据方法的返回值做出相应的后续处理。</li>
+</ul>
+<h2 id="使用POJO对象绑定请求参数值"><a href="#使用POJO对象绑定请求参数值" class="headerlink" title="使用POJO对象绑定请求参数值"></a>使用POJO对象绑定请求参数值</h2><p>SpringMVC会按请求参数名和POJO属性名进行你自动匹配，自动为该对象填充属性值。支撑级联属性，如：dept.deptId、dept.address.tel等</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMaping</span>(<span class="string">"/handle"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">handle</span><span class="params">(User user)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"SCUESS"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="处理模型数据"><a href="#处理模型数据" class="headerlink" title="处理模型数据"></a>处理模型数据</h2><p>SpringMVC提供了以下几种途径输出模型数据：</p>
+<ul>
+<li>ModelAndView：处理方法返回类型为ModelANdView时，方法体即可通过该对象添加模型数据</li>
+<li>Map及Model：形参为org.sprignframework.ui.Model、org.springframework.ui.ModelMap或java.util.Map时，处理方法返回时，Map中的数据会自动添加到模型中</li>
+<li>@SessionAttributes：将模型中的某个属性残存到HttpSession中，以便多个请求之间可以共享这个属性</li>
+<li>@ModelAttribute：方法形参标注该注解后，形参的对象就会放到数据模型中。<blockquote>
+<p>SpringMVC会把ModelAndView的model中数据放入到request域对象中</p>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -552,7 +566,7 @@ a^n=(a^{n_t2^t+…+n_02^0}) \\
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://sgeekioi.github.io/2019/07/31/fastpower/" title="快速幂">https://sgeekioi.github.io/2019/07/31/fastpower/</a>
+    <a href="https://sgeekioi.github.io/2019/08/19/springmvc/" title="springmvc">https://sgeekioi.github.io/2019/08/19/springmvc/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -563,17 +577,6 @@ a^n=(a^{n_t2^t+…+n_02^0}) \\
 
     <footer class="post-footer">
       
-        
-          
-        
-        <div class="post-tags">
-          
-            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-          
-            <a href="/tags/数学/" rel="tag"><i class="fa fa-tag"></i> 数学</a>
-          
-        </div>
-      
 
       
       
@@ -583,8 +586,8 @@ a^n=(a^{n_t2^t+…+n_02^0}) \\
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/30/wsl/" rel="next" title="WSL与图形界面安装------放弃虚拟机吧">
-                <i class="fa fa-chevron-left"></i> WSL与图形界面安装------放弃虚拟机吧
+              <a href="/2019/08/14/restful/" rel="next" title="restful">
+                <i class="fa fa-chevron-left"></i> restful
               </a>
             
           </div>
@@ -592,10 +595,6 @@ a^n=(a^{n_t2^t+…+n_02^0}) \\
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/03/pm20/" rel="prev" title="产品经理必知的20个数据指标">
-                产品经理必知的20个数据指标 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -797,7 +796,7 @@ a^n=(a^{n_t2^t+…+n_02^0}) \\
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#【介绍】"><span class="nav-number">1.</span> <span class="nav-text">【介绍】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【描述】"><span class="nav-number">2.</span> <span class="nav-text">【描述】</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#【代码实现】"><span class="nav-number">3.</span> <span class="nav-text">【代码实现】</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#递归方法"><span class="nav-number">3.1.</span> <span class="nav-text">递归方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非递归式"><span class="nav-number">3.2.</span> <span class="nav-text">非递归式</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RequestMapping"><span class="nav-number">1.</span> <span class="nav-text">@RequestMapping</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PathVariable-映射URL绑定的占位符"><span class="nav-number">1.1.</span> <span class="nav-text">@PathVariable 映射URL绑定的占位符</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#REST"><span class="nav-number">2.</span> <span class="nav-text">REST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请求处理方法签名"><span class="nav-number">3.</span> <span class="nav-text">请求处理方法签名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用POJO对象绑定请求参数值"><span class="nav-number">4.</span> <span class="nav-text">使用POJO对象绑定请求参数值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理模型数据"><span class="nav-number">5.</span> <span class="nav-text">处理模型数据</span></a></li></ol></div>
             
 
           </div>
@@ -1019,46 +1018,6 @@ setInterval("createtime()",250);
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
