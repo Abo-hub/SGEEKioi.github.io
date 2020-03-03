@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>《腾讯产品法》-需求分析法</title>
+      <link href="/2020/03/01/%E3%80%8A%E8%85%BE%E8%AE%AF%E4%BA%A7%E5%93%81%E6%B3%95%E3%80%8B-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E6%B3%95/"/>
+      <url>/2020/03/01/%E3%80%8A%E8%85%BE%E8%AE%AF%E4%BA%A7%E5%93%81%E6%B3%95%E3%80%8B-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2 id="需求分析通用法则：5W1H"><a href="#需求分析通用法则：5W1H" class="headerlink" title="需求分析通用法则：5W1H"></a>需求分析通用法则：<code>5W1H</code></h2><ul><li>Who：<ul><li>产品为谁设计？目标用户？</li><li>谁购买？谁使用？</li><li>数量有多少？</li></ul></li><li>Why：<ul><li>用户为什么选择我们的产品？</li><li>除了我们的产品外，他还有哪些选择？</li><li>产品被替代的可能性大嘛？</li></ul></li><li>When：<ul><li>用户什么时候使用我们的产品？</li><li>多久使用一次，会使用多久？<blockquote><p>前三个问题决定了一个产品的方向，他们可以协助我们判断“做还是不做”一个产品</p></blockquote></li></ul></li><li>Where：<ul><li>用户在哪里使用我们的产品</li></ul></li><li>What：<ul><li>产品具体形式是什么样？做成什么样？</li></ul></li><li>How：<br>  用户是怎么使用它的？<blockquote><p>后三个问题则更为具体，它们数据确定“要做”后再进一步思考的问题。</p></blockquote></li></ul><p>根据产品设计实践，按照优先级顺序，我们大致可以将需求问题划分为一下两大类：</p><ul><li>需求与策略阶段————产品需求四要素<ul><li>Who：广度=主题</li><li>Why：强度=解决方案</li><li>When：频次、可持续性=时间</li></ul></li><li>产品设计阶段————需求场景分析模型<ul><li>Where：场景</li><li>What：方案形态</li><li>How：操作路径</li></ul></li></ul><p>前三个问题在需求和策略阶段确定。他们对应着产品的四要素：<code>广度</code>、<code>强度</code>、<code>频次</code>、<code>可持续性</code>。后面三个问题具体到产品设计阶段再解决。理论上，一个产品需求分析在这四要素维度综合得分越高，用户就会越要这个产品。可当我们继续深入分析就会发现，广度、频次和可持续性其实是受强度影响的。也就是说，“用户为什么选择产品”才是最重要的问题，四要素中只要抓住强度，所有的问题都可以迎刃而解。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 产品经理 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 产品经理 </tag>
+            
+            <tag> 需求分析法 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>母牛生小牛</title>
       <link href="/2019/12/31/NumOfCow/"/>
       <url>/2019/12/31/NumOfCow/</url>
@@ -377,9 +404,9 @@
       
         <tags>
             
-            <tag> 算法 </tag>
-            
             <tag> 数学 </tag>
+            
+            <tag> 算法 </tag>
             
         </tags>
       
@@ -568,9 +595,9 @@
       
         <tags>
             
-            <tag> JVM </tag>
-            
             <tag> Java </tag>
+            
+            <tag> JVM </tag>
             
         </tags>
       
@@ -595,9 +622,9 @@
       
         <tags>
             
-            <tag> JVM </tag>
-            
             <tag> Java </tag>
+            
+            <tag> JVM </tag>
             
         </tags>
       
@@ -647,9 +674,9 @@
       
         <tags>
             
-            <tag> JVM </tag>
-            
             <tag> Java </tag>
+            
+            <tag> JVM </tag>
             
         </tags>
       
@@ -674,9 +701,9 @@
       
         <tags>
             
-            <tag> JVM </tag>
-            
             <tag> Java </tag>
+            
+            <tag> JVM </tag>
             
         </tags>
       
