@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+  <meta name="google-site-verification" content="8YCKcTMJ-S-39x_x19AWATP97FGQ-VaBf1iV6STjqGg">
+
+
+
+
+
+
+
+  <meta name="baidu-site-verification" content="UHZpWLsiiz">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.2.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png?v=7.2.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.2.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.2.0" color="#222">
+
+
+
+
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-4422548800194851",
+    enable_page_level_ads: true
+  });
+</script>
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.2.0',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    copycode: {"enable":true,"show_result":true,"style":null},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    }
+  };
+</script>
+
+  <meta name="description" content="3.6 有序集合类型3.6.1 介绍在集合类型的基础上有序集合类型为几何中的每个元素都关联了一个分数，这使得我们不仅可以完成插入，删除和判断元素是否存在等集合类型支持的操作，还能够获得分数最高(或最低)的前N个元素、获得指定分数范围内的元素等与分数有关的操作。有序集合类型在某些方面和类型列表类型有些相似。  二者都是有序的 二者都可以获得某一范围的元素  区别  列表类型是通过链表实现的，获取靠近">
+<meta name="keywords" content="Java,Redis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis入门五 有序集合类型">
+<meta property="og:url" content="https://sgeekioi.github.io/2019/05/14/Redis入门五-有序集合类型/index.html">
+<meta property="og:site_name" content="SUNBO&#39;s BLOG">
+<meta property="og:description" content="3.6 有序集合类型3.6.1 介绍在集合类型的基础上有序集合类型为几何中的每个元素都关联了一个分数，这使得我们不仅可以完成插入，删除和判断元素是否存在等集合类型支持的操作，还能够获得分数最高(或最低)的前N个元素、获得指定分数范围内的元素等与分数有关的操作。有序集合类型在某些方面和类型列表类型有些相似。  二者都是有序的 二者都可以获得某一范围的元素  区别  列表类型是通过链表实现的，获取靠近">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-03-07T13:02:23.915Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redis入门五 有序集合类型">
+<meta name="twitter:description" content="3.6 有序集合类型3.6.1 介绍在集合类型的基础上有序集合类型为几何中的每个元素都关联了一个分数，这使得我们不仅可以完成插入，删除和判断元素是否存在等集合类型支持的操作，还能够获得分数最高(或最低)的前N个元素、获得指定分数范围内的元素等与分数有关的操作。有序集合类型在某些方面和类型列表类型有些相似。  二者都是有序的 二者都可以获得某一范围的元素  区别  列表类型是通过链表实现的，获取靠近">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://sgeekioi.github.io/2019/05/14/Redis入门五-有序集合类型/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  
+  <title>Redis入门五 有序集合类型 | SUNBO's BLOG</title>
+  
+
+
+
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144111332-1"></script>
+  <script>
+    var host = window.location.hostname;
+    if (host !== "localhost" || !false) {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-144111332-1');
+    }
+  </script>
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?3215c540b6cb28ae4961e21a3c88d5ee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">SUNBO's BLOG</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">37</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">12</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">39</span></a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-schedule">
+
+    
+    
+      
+    
+
+    
+      
+    
+
+    <a href="/schedule/" rel="section"><i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>日程表</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+
+  
+
+  <a href="https://github.com/SGEEKioi" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://sgeekioi.github.io/2019/05/14/Redis入门五-有序集合类型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="SUNBO">
+      <meta itemprop="description" content="好记性不如烂键盘！">
+      <meta itemprop="image" content="https://siricee.github.io/hexo-theme-Chic/image/avatar.jpeg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="SUNBO's BLOG">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Redis入门五 有序集合类型
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+
+          
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-14 20:59:46" itemprop="dateCreated datePublished" datetime="2019-05-14T20:59:46+08:00">2019-05-14</time>
+            </span>
+          
+
+          
+            
+
+            
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2020-03-07 21:02:23" itemprop="dateModified" datetime="2020-03-07T21:02:23+08:00">2020-03-07</time>
+              </span>
+            
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Redis/" itemprop="url" rel="index"><span itemprop="name">Redis</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
+
+          
+
+          <br>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="3-6-有序集合类型"><a href="#3-6-有序集合类型" class="headerlink" title="3.6 有序集合类型"></a>3.6 有序集合类型</h2><h3 id="3-6-1-介绍"><a href="#3-6-1-介绍" class="headerlink" title="3.6.1 介绍"></a>3.6.1 介绍</h3><p>在集合类型的基础上有序集合类型为几何中的每个元素都关联了一个分数，这使得我们不仅可以完成插入，删除和判断元素是否存在等集合类型支持的操作，还能够获得分数最高(或最低)的前N个元素、获得指定分数范围内的元素等与分数有关的操作。<br>有序集合类型在某些方面和类型列表类型有些相似。</p>
+<ol>
+<li>二者都是有序的</li>
+<li>二者都可以获得某一范围的元素</li>
+</ol>
+<p>区别</p>
+<ol>
+<li>列表类型是通过链表实现的，获取靠近来个那段的数据速度越快，而当元素增多后，访问中间数据的速度会较慢。</li>
+<li>有序集合类型使用散列表和跳跃表实现的，所以即使读取位于中间部分的数据速度也很快(时间复杂度是O(logN))</li>
+<li>列表中不能简单地调整某个元素的位置，但是有序集合可以(通过更改这个元素的分数)</li>
+<li>有序集合要比列表类型更消费内存</li>
+</ol>
+<h3 id="3-6-2-命令"><a href="#3-6-2-命令" class="headerlink" title="3.6.2 命令"></a>3.6.2 命令</h3><ol>
+<li>增加元素<blockquote>
+<p>ZADD key score member [score member …]</p>
+</blockquote>
+</li>
+</ol>
+<p>ZADD 命令用来向有有序集合中加入一个元素和该元素的分数，如果该元素已经存在则会用新的分数替换原有的分数。ZADD命令的返回值是加入到集合中的元素个数(不包含之前已经存在的元素)。</p>
+<p>假设我们用有序集合模拟记分板，现在要记录Tom、Peter和David三名运动员的分数(89、67、100)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis&gt; ZADD scoreboard 89 Tom 67 Peter 100 David</span><br><span class="line">(integer) 3</span><br></pre></td></tr></table></figure></p>
+<p>分数不仅可以是整数，还支持双精度浮点数</p>
+<ol>
+<li>获得元素的分数<blockquote>
+<p>ZSCORE key member</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">redis&gt; ZSCORE scoreboard Tom</span><br><span class="line">&quot;89&quot;</span><br></pre></td></tr></table></figure>
+<ol>
+<li>获得排名在某个范围内的元素列表<blockquote>
+<p>ZRANGE key start stop [WITHSCORES]</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>ZREVRANGE key start stop [WINNTHSCORES]</p>
+</blockquote>
+<p>ZRANGE 命令会按照元素分数从小到大的顺序返回索引从start到stop之间的所有元素(包含两端的元素).ZEANGE命令与LRANGE命令十分相似，如索引都是从0开始，负数代表从后向前查找(-1代表最后一个数)。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">redis&gt; ZRANGE scoreboard 0 2</span><br><span class="line">1) &quot;Peter&quot;</span><br><span class="line">2) &quot;Tom&quot;</span><br><span class="line">3) &quot;David&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如果需要同时获得元素的分数的话可以在ZRANGE命令的尾部加上WINTHSCORES参数，这时返回的数据格式就从”元素1，元素2，…”变为”元素1，分数1,…”</p>
+<p>如果两个元素的分数相同，Redis会按照字典顺序来排序。</p>
+<ol>
+<li>获得指定分数范围的元素<blockquote>
+<p>ZRANGEBYSCORE key min max [WITHSCORES] [LIMIT offset count]</p>
+</blockquote>
+</li>
+</ol>
+<p>ZRANGEBYSCORE命令按照元素从小到大返回分数在min和max之间(包含min和max)的元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">redis&gt; ZRANGEBYSCORE scoredboard 80 100</span><br><span class="line">1) &quot;Tom&quot;</span><br><span class="line">2) &quot;David&quot;</span><br></pre></td></tr></table></figure></p>
+<p>如果希望分数范围不包含端点值，可以在分数前加上“(”符号。</p>
+<ol>
+<li>增加某个元素的分数<blockquote>
+<p>ZINCRBY key increment member</p>
+</blockquote>
+</li>
+</ol>
+<p>ZINCRBY命令可以增加一个元素的分数，返回值是更新后的分数。incremet也可以是个负数表示减分。如果指定的的元素不存在，Redis在实行命令前会先建立它并将它的分数赋为0在执行操作。</p>
+<h2 id="3-6-4-命令拾遗"><a href="#3-6-4-命令拾遗" class="headerlink" title="3.6.4 命令拾遗"></a>3.6.4 命令拾遗</h2><ol>
+<li><p>获得集合元素的数量</p>
+<blockquote>
+<p>ZCARD key</p>
+</blockquote>
+</li>
+<li><p>获得指定分数范围的元素个数</p>
+<blockquote>
+<p>ZCOUNT key min max</p>
+</blockquote>
+</li>
+<li><p>删除一个或多个元素</p>
+<blockquote>
+<p>ZREM key member [member …]</p>
+</blockquote>
+</li>
+</ol>
+<p>ZREM 命令的返回值是成功删除的元素数量(不包含本来就不存在的元素)</p>
+<ol>
+<li>按照排名范围删除元素<blockquote>
+<p>ZREMANGEBYRANK key start stop</p>
+</blockquote>
+</li>
+</ol>
+<p>ZREMANGEBYRANK命令按照元素分数从小到大的顺序(索引0表示最小的值)删除处在指定排名范围内的所有元素，并返回删除的元素数量。</p>
+<ol>
+<li>按照分数范围删除元素<blockquote>
+<p>ZREMRANGEBYSCORE  key min max</p>
+</blockquote>
+</li>
+</ol>
+<p>ZREMERANGEBYSCORE 命令会删除指定分数范围内的所有元素，参数min和max的特性和ZRANGEBYSCORE民工中的一样，返回值是删除的元素数量。</p>
+<ol>
+<li>获得元素排名<blockquote>
+<p>ZRANK key member</p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>ZREVRANK key member</p>
+</blockquote>
+<p>ZRANK 命令会按照元素分数从小到大的顺序获得指定的元素的牌型(从0开始).ZREVRANK命令正好相反(分数最大的元素排名为0) </p>
+
+      
+    </div>
+
+    
+
+    
+      
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>SUNBO</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://sgeekioi.github.io/2019/05/14/Redis入门五-有序集合类型/" title="Redis入门五 有序集合类型">https://sgeekioi.github.io/2019/05/14/Redis入门五-有序集合类型/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        
+          
+        
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Redis/" rel="tag"><i class="fa fa-tag"></i> Redis</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/14/Redis入门四-集合类型/" rel="next" title="Redis入门四 集合类型">
+                <i class="fa fa-chevron-left"></i> Redis入门四 集合类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/16/Java-IO流/" rel="prev" title="Java IO流">
+                Java IO流 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  
+    <img class="site-author-image" itemprop="image" src="https://siricee.github.io/hexo-theme-Chic/image/avatar.jpeg" alt="SUNBO">
+  
+  <p class="site-author-name" itemprop="name">SUNBO</p>
+  <div class="site-description motion-element" itemprop="description">好记性不如烂键盘！</div>
+</div>
+
+
+  <nav class="site-state motion-element">
+    
+      <div class="site-state-item site-state-posts">
+        
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-categories">
+        
+          
+            <a href="/categories/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span>
+        </a>
+      </div>
+    
+
+    
+      
+      
+      <div class="site-state-item site-state-tags">
+        
+          
+            <a href="/tags/">
+          
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        <span class="site-state-item-count">37</span>
+        <span class="site-state-item-name">标签</span>
+        </a>
+      </div>
+    
+  </nav>
+
+
+
+
+
+
+
+  <div class="links-of-author motion-element">
+    
+      <span class="links-of-author-item">
+      
+      
+        
+      
+      
+        
+      
+        <a href="https://github.com/SGEEKioi" title="GitHub &rarr; https://github.com/SGEEKioi" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+    
+  </div>
+
+
+
+
+
+
+
+          
+          
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-有序集合类型"><span class="nav-number">1.</span> <span class="nav-text">3.6 有序集合类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-1-介绍"><span class="nav-number">1.1.</span> <span class="nav-text">3.6.1 介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-6-2-命令"><span class="nav-number">1.2.</span> <span class="nav-text">3.6.2 命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-4-命令拾遗"><span class="nav-number">2.</span> <span class="nav-text">3.6.4 命令拾遗</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2019 – <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">SUNBO</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.2.0</div>
+
+
+
+
+<div>
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date();
+    function createtime() {
+        var grt= new Date("03/31/2019 00:00:00");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+    }
+setInterval("createtime()",250);
+</script>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="总访客量">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="总访问量">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  
+    
+    
+  
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+
+
+  <script src="/js/utils.js?v=7.2.0"></script>
+
+  <script src="/js/motion.js?v=7.2.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.2.0"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.2.0"></script>
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
+
+  <script src="/js/next-boot.js?v=7.2.0"></script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
